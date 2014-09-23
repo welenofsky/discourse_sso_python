@@ -11,11 +11,13 @@ A Python module to help implement SSO for Discourse (http://www.discourse.org/)
 
 Credentials for build_login_URL():
 
+
 **required**
-            * external_id
-            * nonce
-            * email
+* external_id
+* nonce
+* email
+    
 **optional**
-            * email
-            * name
+* email
+* name
 
