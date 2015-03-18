@@ -4,6 +4,7 @@ from hashlib import sha256
 import hmac
 from base64 import b64decode, b64encode
 
+
 class DiscourseSSO:
 
     def __init__(self, secret_key):
@@ -21,7 +22,11 @@ class DiscourseSSO:
             Bool : Indicates validity of payload
         """
         payload = urllib.parse.unquote(payload)
-        computed_sig = hmac.new(self.__secret_key.encode(), payload.encode(), sha256).hexdigest()
+        computed_sig = hmac.new(
+            self.__secret_key.encode(),
+            payload.encode(),
+            sha256
+        ).hexdigest()
 
         return hmac.compare_digest(computed_sig, sig)
 
