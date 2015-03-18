@@ -41,7 +41,7 @@ class DiscourseSSO:
 
         """
         payload = b64decode(urllib.parse.unquote(payload)).decode()
-        d = dict(nonce.split("=") for nonce in payload.split(' '))
+        d = dict(nonce.split("=") for nonce in payload.split('&'))
 
         if 'nonce' in d and d['nonce'] != '':
             return d['nonce']
